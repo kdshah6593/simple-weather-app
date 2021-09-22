@@ -3,7 +3,9 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import './SearchForm.css';
-import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import FormHelperText from '@mui/material/FormHelperText';
 
 const SearchForm = (props) => {
     const [searchCity, setSearchCity] = useState("");
@@ -42,33 +44,32 @@ const SearchForm = (props) => {
             props.fetchByCoordinates(longitude, latitude)
         }
     }
-    
-    
+        
     return (
-        <div>
+        <Container maxWidth="false" sx={{justifyContent:"center"}}>
             <Stack direction="row" spacing={2} ml={4} mr={4} divider={<Divider orientation="vertical" flexItem />}>
                 <form id="city-form" onSubmit={handleSubmit}>
                     <label className="form-item" htmlFor="cityName">Search By City Name: </label>
-                    <TextField id="cityName" variant="outlined" size="small" placeholder="i.e. Chicago" onChange={handleCityChange} value={searchCity} />
-                    <input className="form-item" type="submit" value="Search" />
+                    <TextField id="cityName" variant="outlined" size="small" color="primary" placeholder="i.e. Chicago" onChange={handleCityChange} value={searchCity} sx={{background: "white", borderRadius: 1}}/>
+                    <Button variant="contained" type="submit" color="primary" sx={{ml: 2}}>Check Forecast</Button>
                 </form>
 
                 <form id="zip-code-form" onSubmit={handleSubmit}>
                     <label className="form-item" htmlFor="zipCode">Search By US Zip Code: </label>
-                    <TextField id="zipCode" variant="outlined" size="small" placeholder="i.e. 60606" onChange={handleZipChange} value={searchZipCode} />
-                    <input className="form-item" type="submit" value="Search" />
+                    <TextField id="zipCode" variant="outlined" size="small" color="primary" placeholder="i.e. 60606" onChange={handleZipChange} value={searchZipCode} sx={{background: "white", borderRadius: 1}} />
+                    <Button variant="contained" type="submit" color="primary" sx={{ml: 2}}>Check Forecast</Button>
                 </form>
 
 
                 <form id="coordinates-form" onSubmit={handleSubmit}>
-                    <Typography className="form-item" variant="body1">
-                        If Browser Allowed Access To Current Location
-                    </Typography>
-                    <input type="submit" value="Search Current Location" />
+                    <Button variant="contained" type="submit" color="primary" sx={{mr: 2}}>Forecast My Current Location</Button>
+                    <FormHelperText className="form-item" sx={{color: '#2196f3'}}>
+                        (If Browser Allowed Access To Current Location)
+                    </FormHelperText>
                 </form>
 
             </Stack>
-        </div>
+        </Container>
     )
 }
 
