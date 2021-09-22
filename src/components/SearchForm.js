@@ -7,7 +7,15 @@ const SearchForm = (props) => {
     const [longitude, setLongitude] = useState("")
     const [latitude, setLatitude] = useState("")
 
-    
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(getLocation)
+    })
+
+    const getLocation = (position) => {
+        setLongitude(position.coords.longitude);
+        setLatitude(position.coords.latitude);
+    }
+
     const handleCityChange = (event) => {
         setSearchCity(event.target.value);
     }
