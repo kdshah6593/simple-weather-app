@@ -19,5 +19,11 @@ After you have this set up, you can run the application.
 
 If you have Yarn installed, you can run `yarn start`. Otherwise, you can run `npm start`. This should automatically open your browser showing the app. If not, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+It will ask you to allow use of location so that you can use the `Forecast At My Location` Option. Otherwise you can type in a City or US Zip code to get the temperature and forecast.
+
+## Screenshots
+### Before Searching
 ![Alt text](https://github.com/kdshah6593/simple-weather-app/blob/main/readme_images/weather-app-before-search.png?raw=true)
+
+### After Searching
 ![Alt text](https://github.com/kdshah6593/simple-weather-app/blob/main/readme_images/weather-app-after-search.png?raw=true)
