@@ -19,8 +19,10 @@ const SearchForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (event.target.id === "city-form") {
+            setSearchCity("");
             props.fetchByCity(searchCity);
         } else if (event.target.id === "zip-code-form") {
+            setSearchZipCode("");
             props.fetchByZipCode(searchZipCode)
         } else if (event.target.id === "coordinates-form") {
             console.log(longitude)
