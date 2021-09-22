@@ -53,6 +53,33 @@ const WeatherList = (props) => {
         return (sum / denominator)
     }
 
+    const findModal = (weatherList) => {
+        let temps = {}
+        let mode = []
+        let max = 0
+
+        for (let i = 0; i < weatherList.length; i++) {
+            let temp = Math.round(weatherList[i].main.temp)
+            if (temps[temp]) {
+                temps[temp] += 1
+            } else {
+                temps[temp] = 1
+            }
+        }
+
+        for (const [key, value] of Object.entries(temps)) {
+            if (value > max) {
+                max = value
+                mode = [key]
+            } else if (value === max) {
+                mode.push(key)
+            }
+        }
+
+        let modeTemps = mode.map(temp => temp + "°F").join(", ")
+        return modeTemps
+    }
+
     const forecast = () => {
         if (props.weatherData === "") {
             return (
@@ -76,11 +103,22 @@ const WeatherList = (props) => {
             return weatherCards
         }
     }
+
+    const modalText = () => {
+        if (props.weatherData === "") {
+            return ""
+        } else {
+            return (
+                <Typography variant="h6" color="#2196f3" mt={1}>The modal temperature(s) for the weekly forecast: {findModal(props.weatherData.list)}</Typography>
+            )
+        }
+    } 
     
     return (
         <Box sx={{flexGrow: 1, mt: 3}}>
             <Grid container spacing={2} sx={{justifyContent: 'center'}}>
                 {forecast()}
+                {modalText()}
             </Grid>
         </Box>
     )
