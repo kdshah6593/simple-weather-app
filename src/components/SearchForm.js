@@ -46,17 +46,17 @@ const SearchForm = (props) => {
     }
         
     return (
-        <Container maxWidth="false" sx={{justifyContent:"center"}}>
+        <Container maxWidth="false" sx={{justifyContent:"center", pt: 5, pb: 5,}}>
             <Stack direction="row" spacing={2} ml={4} mr={4} divider={<Divider orientation="vertical" flexItem />}>
                 <form id="city-form" onSubmit={handleSubmit}>
                     <label className="form-item" htmlFor="cityName">Search By City Name: </label>
-                    <TextField id="cityName" variant="outlined" size="small" color="primary" placeholder="i.e. Chicago" onChange={handleCityChange} value={searchCity} sx={{background: "white", borderRadius: 1}}/>
+                    <TextField required id="cityName" variant="outlined" size="small" color="primary" placeholder="i.e. Chicago" onChange={handleCityChange} value={searchCity} sx={{background: "white", borderRadius: 1}}/>
                     <Button variant="contained" type="submit" color="primary" sx={{ml: 2}}>Check Forecast</Button>
                 </form>
 
                 <form id="zip-code-form" onSubmit={handleSubmit}>
                     <label className="form-item" htmlFor="zipCode">Search By US Zip Code: </label>
-                    <TextField id="zipCode" variant="outlined" size="small" color="primary" placeholder="i.e. 60606" onChange={handleZipChange} value={searchZipCode} sx={{background: "white", borderRadius: 1}} />
+                    <TextField required id="zipCode" variant="outlined" size="small" color="primary" placeholder="i.e. 60606" onChange={handleZipChange} value={searchZipCode} sx={{background: "white", borderRadius: 1}} />
                     <Button variant="contained" type="submit" color="primary" sx={{ml: 2}}>Check Forecast</Button>
                 </form>
 
