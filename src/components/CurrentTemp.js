@@ -3,9 +3,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-const CurrentTemp = (props) => {
-    console.log(props.weatherData)
-    
+const CurrentTemp = (props) => {    
     return (
         <Container>
             <Paper sx={{width: '50%', marginLeft:"25%", marginRight:"25%", display:"flex", flexDirection:"row", alignItems:"center"}}>
