@@ -2,6 +2,7 @@ import React from 'react'
 import WeatherCard from './WeatherCard';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 const WeatherList = (props) => {
     
@@ -54,7 +55,13 @@ const WeatherList = (props) => {
 
     const forecast = () => {
         if (props.weatherData === "") {
-            return(<p>No location currently</p>)
+            return (
+                <Typography variant='h4' sx={{color: '#2196f3', fontWeight: 'bold'}}>Choose a Location!</Typography>
+            )
+        } else if (props.weatherData.message === 'city not found') {
+            return (
+                <Typography variant='h4' sx={{color: '#2196f3', fontWeight: 'bold'}}>Sorry, that city can't be found. Try again!</Typography>
+            )
         } else {
             const days = sortDays(props.weatherData.list)
             const weatherCards = days.map(data => (
