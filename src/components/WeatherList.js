@@ -62,6 +62,10 @@ const WeatherList = (props) => {
             return (
                 <Typography variant='h4' sx={{color: '#2196f3', fontWeight: 'bold'}}>Sorry, that city can't be found. Try again!</Typography>
             )
+        } else if (props.weatherData.message === 'Nothing to geocode') {
+            return (
+                <Typography variant='h4' sx={{color: '#2196f3', fontWeight: 'bold'}}>Allow browser access to your current location. Try again!</Typography>
+            )
         } else {
             const days = sortDays(props.weatherData.list)
             const weatherCards = days.map(data => (
