@@ -26,7 +26,6 @@ const WeatherCard = (props) => {
             height="180"
             image={`http://openweathermap.org/img/wn/${props.data[5]}@2x.png`}
             alt={props.data[4]}
-            sx={{}}
           />
           <CardContent>
             <Typography variant="h5" color="text.secondary" mt={-2}>
