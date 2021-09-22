@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 const WeatherCard = (props) => {
     
-    const date = new Date(props.data.dt * 1000)
+    const date = new Date(props.data.dt_txt)
 
     const temp = Math.round(props.data.main.temp)
     const feels_like = Math.round(props.data.main.feels_like)
@@ -14,10 +14,9 @@ const WeatherCard = (props) => {
     // const maxTemp = Math.round(props.data.main.max)
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 300 }}>
           <CardMedia
             component="img"
-            height="200"
             image={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
             alt={props.data.weather[0].description}
           />
@@ -32,7 +31,7 @@ const WeatherCard = (props) => {
               Feels Like: {feels_like}°F
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Data and Time: {date.toLocaleDateString()} - {date.toLocaleTimeString()}
+              {date.toLocaleDateString()} - {date.toLocaleTimeString()}
             </Typography>
             <Typography variant="body1" color="text.secondary">
               Min:
