@@ -3,7 +3,7 @@ import SearchForm from '../components/SearchForm'
 import WeatherList from '../components/WeatherList'
 
 const WeatherContainer = () => {
-    const [weatherData, setWeatherData] = useState()
+    const [weatherData, setWeatherData] = useState("")
     
     const baseUrl = "http://api.openweathermap.org/data/2.5/forecast?"
     const urlEnding = `&appid=${process.env.REACT_APP_API_KEY}`

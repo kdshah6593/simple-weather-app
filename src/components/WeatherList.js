@@ -3,14 +3,24 @@ import WeatherCard from './WeatherCard';
 
 const WeatherList = (props) => {
     
-    const forecast = props.weatherData.list.map(dataPoint => (
-        <WeatherCard data={dataPoint} />
-    ))
+    // const forecast = props.weatherData.list.map(dataPoint => (
+    //     <WeatherCard data={dataPoint} />
+    // ))
+    const forecast = () => {
+        if (props.weatherData === "") {
+            return(<p>No location currently</p>)
+        } else {
+            const weatherCards = props.weatherData.list.map(dataPoint => (
+                <WeatherCard data={dataPoint} />
+            ))
+            return weatherCards
+        }
+    }
     
     return (
         <div>
-            <p>And it will hold the weather cards</p>
-            {forecast}
+            <p>The Weather Cards are listed below</p>
+            {forecast()}
         </div>
     )
 }
