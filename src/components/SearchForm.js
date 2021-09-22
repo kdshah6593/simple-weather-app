@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import TextField from '@mui/material/TextField';
 
-const SearchForm = () => {
+const SearchForm = (props) => {
     const [searchCity, setSearchCity] = useState("");
     const [searchZipCode, setSearchZipCode] = useState("");
     const [longitude, setLongitude] = useState("")
@@ -16,8 +16,17 @@ const SearchForm = () => {
         setSearchZipCode(event.target.value);
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (event.target.id === "city-form") {
+            props.fetchByCity(searchCity);
+        } else if (event.target.id === "zip-code-form") {
+            props.fetchByZipCode(searchZipCode)
+        } else if (event.target.id === "coordinates-form") {
+            console.log(longitude)
+            console.log(latitude)
+            props.fetchByCoordinates(longitude, latitude)
+        }
     }
     
     
