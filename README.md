@@ -1,12 +1,12 @@
 # Simple Weather App
 
-This project was created as a take home assignment for a company. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Material-UI](https://mui.com/).
+This is a weather application that provides the current temperature and a 5 day forecast. It was created as a take home assignment for a company. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Material-UI](https://mui.com/).
 
 ## Installation
-To use this app, clone this repo: `$ git clone https://github.com/kdshah6593/my-weather-app`
+To use this app, click `Fork` in the upper right hand corner to copy the repository to your profile. Then clone the repo: `$ git clone https://github.com/{your-username}/simple-weather-app`. If you have `SSH` set up, then you can use the `SSH path` instead of the `HTTPS path`.
 
 ## Usage
-After cloning, access the directory `$ cd my-weather-app` (if nested under other directories be sure to include those in the path)
+After cloning, access the directory `$ cd simple-weather-app`.
 
 The application uses the OpenWeather API, which requires an API Key. API Keys should never be shared, so follow these instructions to set up access to the API. 
 
@@ -18,3 +18,6 @@ Open the `.env` file, and create a variable by typing `REACT_APP_API_KEY = `. Th
 After you have this set up, you can run the application.
 
 If you have Yarn installed, you can run `yarn start`. Otherwise, you can run `npm start`. This should automatically open your browser showing the app. If not, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+![Alt text](https://github.com/kdshah6593/simple-weather-app/blob/main/readme_images/weather-app-before-search.png?raw=true)
+![Alt text](https://github.com/kdshah6593/simple-weather-app/blob/main/readme_images/weather-app-after-search.png?raw=true)
