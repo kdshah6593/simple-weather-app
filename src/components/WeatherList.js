@@ -1,6 +1,7 @@
 import React from 'react'
+import WeatherCard from './WeatherCard';
 
-const WeatherList = () => {
+const WeatherList = (props) => {
     
     const forecast = props.weatherData.list.map(dataPoint => (
         <WeatherCard data={dataPoint} />
