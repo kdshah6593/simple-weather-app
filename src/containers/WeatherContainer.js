@@ -7,7 +7,7 @@ const WeatherContainer = () => {
     const [weatherData, setWeatherData] = useState("")
     
     const baseUrl = "http://api.openweathermap.org/data/2.5/forecast?"
-    const urlEnding = `&appid=${process.env.REACT_APP_API_KEY}`
+    const urlEnding = `&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
 
     const fetchByCity = (cityName) => {
         fetch(baseUrl+`q=${cityName}`+ urlEnding)
@@ -27,7 +27,7 @@ const WeatherContainer = () => {
         })
     }
 
-    const fetchByCoordinates = (lat, lon) => {
+    const fetchByCoordinates = (lon, lat) => {
         fetch(baseUrl+`lat=${lat}&lon=${lon}`+ urlEnding)
         .then(response => response.json())
         .then(data => {
