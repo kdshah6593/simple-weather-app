@@ -3,9 +3,6 @@ import WeatherCard from './WeatherCard';
 
 const WeatherList = (props) => {
     
-    // const forecast = props.weatherData.list.map(dataPoint => (
-    //     <WeatherCard data={dataPoint} />
-    // ))
     const forecast = () => {
         if (props.weatherData === "") {
             return(<p>No location currently</p>)
