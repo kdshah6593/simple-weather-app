@@ -62,7 +62,7 @@ const SearchForm = (props) => {
 
 
                 <form id="coordinates-form" onSubmit={handleSubmit}>
-                    <Button variant="contained" type="submit" color="primary" sx={{mr: 2}}>Forecast My Current Location</Button>
+                    <Button variant="contained" type="submit" color="primary" sx={{mr: 2}}>Forecast At Current Location</Button>
                     <FormHelperText className="form-item" sx={{color: '#2196f3'}}>
                         (If Browser Allowed Access To Current Location)
                     </FormHelperText>
