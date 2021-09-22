@@ -52,9 +52,6 @@ const WeatherList = (props) => {
         return (sum / denominator)
     }
 
-    console.log(sortDays(props.weatherData.list))
-
-    
     const forecast = () => {
         if (props.weatherData === "") {
             return(<p>No location currently</p>)
