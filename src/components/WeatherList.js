@@ -78,7 +78,7 @@ const WeatherList = (props) => {
     }
     
     return (
-        <Box sx={{flexGrow: 1, mt: 5}}>
+        <Box sx={{flexGrow: 1, mt: 3}}>
             <Grid container spacing={2} sx={{justifyContent: 'center'}}>
                 {forecast()}
             </Grid>
