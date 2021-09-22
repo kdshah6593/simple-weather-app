@@ -6,21 +6,22 @@ import Typography from '@mui/material/Typography';
 
 const WeatherCard = (props) => {
     
+    const date = new Date(props.data.dt * 1000)
 
     return (
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
             height="140"
-            image={}
-            alt={}
+            image={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+            alt={props.data.weather[0].description}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Data and Time: 
+              Data and Time: {date.toLocaleDateString()} - {date.toLocaleTimeString()}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Temperature:
+              Temperature: {props.data.main.temp}
             </Typography>
           </CardContent>
         </Card>
