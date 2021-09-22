@@ -46,7 +46,7 @@ const SearchForm = (props) => {
     }
         
     return (
-        <Container maxWidth="false" sx={{justifyContent:"center", pt: 5, pb: 5,}}>
+        <Container maxWidth="false" sx={{justifyContent:"center", pt: 3, pb: 3}}>
             <Stack direction="row" spacing={2} ml={4} mr={4} divider={<Divider orientation="vertical" flexItem />}>
                 <form id="city-form" onSubmit={handleSubmit}>
                     <label className="form-item" htmlFor="cityName">Search By City Name: </label>
