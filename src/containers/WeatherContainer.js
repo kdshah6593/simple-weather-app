@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SearchForm from '../components/SearchForm'
 import WeatherList from '../components/WeatherList'
+import Typography from '@mui/material/Typography';
 
 const WeatherContainer = () => {
     const [weatherData, setWeatherData] = useState("")
@@ -37,7 +38,7 @@ const WeatherContainer = () => {
     
     return (
         <div>
-            <p>This is a weather container</p>
+            <Typography variant='h1' gutterBottom="true" sx={{color: 'orange'}}>Simple Weather App</Typography>
             <SearchForm fetchByCity={fetchByCity} fetchByZipCode={fetchByZipCode} fetchByCoordinates={fetchByCoordinates} />
             <WeatherList weatherData={weatherData} />
         </div>
