@@ -1,0 +1,22 @@
+#city-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#zip-code-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#coordinates-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-item {
+    margin-left: 10px;
+    margin-right: 10px;
+}
